@@ -85,7 +85,12 @@ public class Menu {
 
             Funcion funcionSeleccionada = funciones[seleccion - 1];
             System.out.println("========== PUESTOS DISPONIBLES ==========");
-            System.out.println(obtenerPuestosTexto.obtenerPuestosTexto(funcionSeleccionada));
+            try {
+                System.out.println(obtenerPuestosTexto.obtenerPuestosTexto(funcionSeleccionada));
+            } catch (IndiceInvalidoException e) {
+                System.out.println("Error: " + e.getMessage());
+                return;
+            }
 
             boolean puestoOcupado = false;
             while (!puestoOcupado) {
@@ -133,7 +138,7 @@ public class Menu {
                 System.out.println("Puestos disponibles: " + disponibles);
 
                 if (i < funciones.length - 1) {
-                    System.out.print("Presione una tecla para continuar con la siguiente función...");
+                    System.out.print("Presione Enter para continuar con la siguiente función...");
                     scanner.nextLine();
                 }
             }

@@ -1,7 +1,8 @@
 package Funcion;
+import Excepciones.IndiceInvalidoException;
 
 public class obtenerPuestosTexto {
-    public static String obtenerPuestosTexto(Funcion funcion) {
+    public static String obtenerPuestosTexto(Funcion funcion) throws IndiceInvalidoException {
         String texto = "";
 
         for (int i = 0; i < funcion.getPuestos().length; i++) {
